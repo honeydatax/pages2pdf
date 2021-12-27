@@ -1,0 +1,49 @@
+MAWK(1)                          USER COMMANDS                         MAWK(1)
+
+NAME
+       mawk - pattern scanning and text processing language
+
+SYNOPSIS
+       mawk  [-W  option]  [-F value] [-v var=value] [--] 'program text' [file
+       ...]
+       mawk [-W option] [-F value] [-v var=value] [-f program-file] [--] [file
+       ...]
+
+DESCRIPTION
+       mawk  is an interpreter for the AWK Programming Language.  The AWK lan‐
+       guage is useful for manipulation of data files, text retrieval and pro‐
+       cessing,  and  for prototyping and experimenting with algorithms.  mawk
+       is a new awk meaning it implements the AWK language as defined in  Aho,
+       Kernighan  and Weinberger, The AWK Programming Language, Addison-Wesley
+       Publishing, 1988.  (Hereafter referred to as the AWK book.)  mawk  con‐
+       forms  to  the Posix 1003.2 (draft 11.3) definition of the AWK language
+       which contains a few features not described in the AWK book,  and  mawk
+       provides a small number of extensions.
+
+      An  AWK  program  is  a sequence of pattern {action} pairs and function
+       definitions.  Short programs are entered on the  command  line  usually
+       enclosed  in ' ' to avoid shell interpretation.  Longer programs can be
+       read in from a file with the -f option.  Data  input is read  from  the
+       list  of files on the command line or from standard input when the list
+       is empty.  The input is broken into records as determined by the record
+       separator  variable,  RS.  Initially, RS = "\n" and records are synony‐
+       mous with lines.  Each record is compared against each pattern  and  if
+       it matches, the program text for {action} is executed.
+
+OPTIONS
+       -F value       sets the field separator, FS, to value.
+
+       -f file        Program  text is read from file instead of from the com‐
+                      mand line.  Multiple -f options are allowed.
+
+       -v var=value   assigns value to program variable var.
+
+       --             indicates the unambiguous end of options.
+
+       The above options will be available with any Posix compatible implemen‐
+       tation  of  AWK,  and implementation specific options are prefaced with
+AUTHOR
+       Mike Brennan (brennan@whidbey.com).
+
+Version 1.2                       Dec 22 1994                          MAWK(1)
+       

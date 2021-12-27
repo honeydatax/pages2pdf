@@ -34,6 +34,7 @@ int main(int arg,char  *argv[]){
 			fclose(f);
 			ff=fopen("/tmp/datas.dat","w");
 			fprintf (ff,"%!PS\n%%Pages: %d\n/Free-Mono findfont\n12 scalefont\nsetfont\nnewpath\n",pages+1);
+			fclose(ff);
 			sprintf(envi,"cat /tmp/datas.dat /tmp/data.dat > %s.ps",argv[1]);
 			system(envi);
 			sprintf(envi,"ps2pdf %s.ps %s",argv[1],argv[2]);
